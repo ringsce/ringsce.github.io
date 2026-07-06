@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KayteIDE</title>
+<meta name="description" content="KayteIDE is a lightweight, cross-platform IDE built with Qt 6 and C++17, for editing, saving, and managing Visual Basic (VB) code with syntax highlighting.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="site-header"><div class="container header-inner"><a class="logo" href="#top">KayteIDE</a><nav><a href="../index.html">← All Projects</a><a href="#features">Features</a><a href="#getting-started">Getting Started</a><a href="https://github.com/ringsce/kayteide">GitHub</a></nav></div></header><section class="hero" id="top"><div class="container"><span class="eyebrow">Qt 6 + C++17</span><h1>KayteIDE</h1><p class="tagline">A lightweight, cross-platform IDE for Visual Basic code</p><p class="description">KayteIDE provides core functionality for editing, saving, and managing Visual Basic (VB) code, enhanced with syntax highlighting for improved readability.</p><div class="cta-row"><a class="button button-primary" href="#getting-started">Get Started</a><a class="button button-secondary" href="https://github.com/ringsce/kayteide">View on GitHub</a></div></div></section><section class="section" id="features"><div class="container"><h2>Features</h2><div class="grid"><div class="card"><div class="card-head"><h3>File Management</h3></div><p>Open existing Visual Basic source files, save changes, and Save As to a new location.</p></div><div class="card"><div class="card-head"><h3>Syntax Highlighting</h3></div><p>Basic syntax highlighting for VB keywords, data types, functions, operators, comments, strings, numbers, and preprocessor directives, with colors inspired by common IDE themes.</p></div><div class="card"><div class="card-head"><h3>File Properties Dialog</h3></div><p>View detailed information about the currently open file: general details (size, dates), permissions, and suggested applications.</p></div><div class="card"><div class="card-head"><h3>Project Actions</h3><span class="badge badge-partial">Placeholder</span></div><p>&quot;Build,&quot; &quot;Run,&quot; &quot;Clean,&quot; and &quot;Debug&quot; actions are included as placeholders, signaling future expansion into a more comprehensive IDE experience.</p></div></div></div></section><section class="section section-alt"><div class="container"><h2>Supported Platforms</h2><div class="grid grid-compact"><div class="card card-compact"><p>macOS (Intel and Apple Silicon - Universal Binary support)</p></div><div class="card card-compact"><p>Linux (x86_64 and other architectures where Qt 6 is available)</p></div></div></div></section><section class="section" id="getting-started"><div class="container"><h2>Getting Started</h2><h3>Prerequisites</h3><ul><li>Git - for cloning the repository</li><li>CMake - version 3.16 or higher</li><li>A C++17-compliant compiler (GCC, Clang, or MSVC)</li><li>Qt 6 development libraries</li></ul><h3>Build &amp; Run</h3><pre><code>git clone https://github.com/ringsce/kayteide.git
+cd kayteide
+
+mkdir build
+cd build
+cmake ..
+cmake --build . --parallel
+
+# Run it
+./bin/KayteIDE</code></pre></div></section><section class="section section-alt"><div class="container"><h2>Usage</h2><ul><li>Open File: File &gt; Open (or the toolbar button) to load a .vb / .bas file into the editor.</li><li>Save File: File &gt; Save to save changes; new files prompt for a save location.</li><li>Save As: File &gt; Save As to save the current content to a new file.</li><li>File Properties: File &gt; Properties... for detailed info about the current file.</li><li>Project Actions: Build / Run / Clean / Debug currently show placeholder messages.</li></ul></div></section><footer class="site-footer"><div class="container footer-inner"><div><p>Pedro Dias Vicente / KD - pdvicente@gleentech.com</p><p>Licensed under a permissive license (likely BSD-3-Clause or similar) - see source file license headers for precise terms.</p></div><ul class="resource-links"><li><a href="https://github.com/ringsce/kayteide">GitHub Repository</a></li><li><a href="mailto:pdvicente@gleentech.com">Email</a></li></ul></div></footer>
+</body>
+</html>

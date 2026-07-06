@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OS/2 Warp 4.52 for ARM64</title>
+<meta name="description" content="A bare-metal OS/2-style operating system written in C11 + AArch64 assembly, targeting QEMU virt (Cortex-A72) and Raspberry Pi 3/3+ hardware.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="site-header"><div class="container header-inner"><a class="logo" href="#top">OS/2 Warp 4.52</a><nav><a href="../index.html">← All Projects</a><a href="#highlights">Highlights</a><a href="#quick-start">Quick Start</a><a href="https://github.com/ringsce/os24arm">GitHub</a></nav></div></header><section class="hero" id="top"><div class="container"><span class="eyebrow">C11 + AArch64 - Bare Metal</span><h1>OS/2 Warp 4.52 for ARM64</h1><p class="tagline">QEMU virt (Cortex-A72) and Raspberry Pi 3/3+</p><p class="description">A bare-metal OS/2-style operating system with a PL011 UART driver, a readline-style DOS shell, a QuickBASIC-compatible interpreter, and a full FAT32/VFS stack backed by either a RAM disk or QEMU virtio-blk.</p><p class="description"><em>Boots on QEMU virt | Boots on Raspberry Pi 3+ | Active Development</em></p><div class="cta-row"><a class="button button-primary" href="#quick-start">Get Started</a><a class="button button-secondary" href="https://github.com/ringsce/os24arm">View on GitHub</a></div></div></section><section class="section" id="highlights"><div class="container"><h2>Highlights</h2><div class="grid"><div class="card"><h3>Readline DOS Shell</h3><p>Arrow keys, Home/End, insert mode, Ctrl-A/E, Ctrl-C, Ctrl-D, Ctrl-L, and a 16-entry command history.</p></div><div class="card"><h3>QuickBASIC Interpreter</h3><p>A QuickBASIC 4.5-compatible interpreter (IF/SELECT CASE/FOR/WHILE/DO LOOP, GOSUB, arrays, string functions) launched with the basic command.</p></div><div class="card"><h3>FAT32 / VFS Stack</h3><p>cli_fs -&gt; vfs -&gt; fat32 -&gt; blkdev layers, with ramdisk and QEMU virtio-blk drivers (SD card support planned for Raspberry Pi).</p></div><div class="card"><h3>OS/2 DosCall API</h3><p>doscalls.c stubs out the OS/2 DosCall API surface for shell and BASIC programs to build on.</p></div></div></div></section><section class="section section-alt"><div class="container"><h2>Platform Support</h2><div class="grid grid-compact"><div class="card card-compact"><h3>QEMU virt (development)</h3><ul><li>CPU: Cortex-A72</li><li>RAM: configurable (2GB default)</li><li>UART: PL011 @ 0x09000000</li><li>Load address: 0x40000000</li><li>Output: os2warp.img</li></ul></div><div class="card card-compact"><h3>Raspberry Pi 3+ (hardware)</h3><ul><li>CPU: Cortex-A53 (64-bit)</li><li>RAM: 1GB</li><li>UART: PL011 @ 0x3F201000</li><li>Load address: 0x80000</li><li>Output: kernel8.img</li></ul></div></div></div></section><section class="section" id="quick-start"><div class="container"><h2>Build &amp; Run (QEMU)</h2><pre><code>git clone https://github.com/ringsce/os24arm.git
+cd os24arm
+
+cmake -B build -G Ninja
+cmake --build build
+
+# Boot (serial console, no window)
+cmake --build build --target run</code></pre></div></section><section class="section section-alt"><div class="container"><h2>QuickBASIC Interpreter</h2><p>Type basic at the shell to launch it; BYE, QUIT, or SYSTEM returns to the shell.</p><pre><code>10 PRINT &quot;Hello from OS/2 BASIC!&quot;
+20 FOR I = 1 TO 10
+30   PRINT I * I
+40 NEXT I
+50 END
+RUN</code></pre></div></section><footer class="site-footer"><div class="container footer-inner"><div><p>MIT - hand-built bare-metal kernel, educational purposes.</p></div><ul class="resource-links"><li><a href="https://github.com/ringsce/os24arm">GitHub Repository</a></li></ul></div></footer>
+</body>
+</html>
